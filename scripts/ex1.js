@@ -10,8 +10,10 @@ Output:
   { name: "Bob", average: 70, grade: "C" },
   { name: "Charlie", average: 100, grade: "A" }
 ]*/
+/*complexity=O(m*n)*/
 function generateReport(students) { 
-    return students.map(student => {
+    /*map iterates over students arrays so O(n) */
+    return students.map(student => {/*reduce iterates over the score array so O(m) */
         const average = student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length;
         let grade;
         if (average >= 90) {

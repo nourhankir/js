@@ -37,9 +37,13 @@ acc2.getSummary(); // Sara's balance is $500
 acc1.printHistory();
 */
 class BankAccount{
+  /*O(1)*/
     constructor(ownerName, initialBalance){this.ownerName = ownerName; this.balance = initialBalance;this.history = [];}
+    /*O(1)*/
     deposit(amount){this.balance+=amount;}
+    /*O(1)*/
     withdraw(amount){this.balance-=amount;}
+    /*O(1)*/
     transferTo(anotherAccount, amount){
       if(this.balance >= amount){
         this.withdraw(amount);
@@ -52,7 +56,9 @@ class BankAccount{
         console.log("Insufficient balance for transfer.");
       }
     }
+    /*O(1)*/
     getSummary(){return `${this.ownerName}'s balance is $${this.balance}`;}
+    /*O(1)*/
     accountHistory(){return this.history;}
 }
 acc1=new BankAccount("John", 500);
